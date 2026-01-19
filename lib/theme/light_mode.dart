@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
-ThemeData darkMode = ThemeData(
+ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
+  useMaterial3: true,
   colorScheme: ColorScheme.light(
-    surface: Colors.grey.shade900,
-    primary: Colors.grey.shade800,
-    secondary: Colors.grey.shade700,
-    inversePrimary: Colors.grey.shade300,
+    surface: Colors.white,
+    primary: Colors.blue.shade700,
+    secondary: Colors.blue.shade400,
+    tertiary: Colors.amber.shade600,
+    inversePrimary: Colors.blue.shade900,
   ),
-  textTheme: ThemeData.dark().textTheme.apply(
-    bodyColor: Colors.grey[300],
-    displayColor: Colors.white,
+  scaffoldBackgroundColor: Colors.white,
+  appBarTheme: AppBarTheme(
+    backgroundColor: Colors.blue.shade700,
+    foregroundColor: Colors.white,
+    elevation: 0,
   ),
+  cardColor: Colors.white,
+  textTheme: ThemeData.light().textTheme.apply(
+        bodyColor: Colors.grey.shade900,
+        displayColor: Colors.grey.shade900,
+      ),
 );

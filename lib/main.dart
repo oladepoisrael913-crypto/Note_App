@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:mini_app/firebase_options.dart';
+import 'package:mini_app/theme/light_mode.dart';
+import 'package:mini_app/theme/dark_mode.dart';
 import 'login_page.dart';
 
+// Theme mode provider
 final themeModeProvider = StateProvider<ThemeMode>((ref) {
-  return ThemeMode.light;
+  return ThemeMode.system;
 });
 
 Future<void> main() async {
@@ -23,14 +25,15 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(themeModeProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.light,
-      home: LoginPage(),
+      title: 'My Notes',
+      theme: lightMode,
+      darkTheme: darkMode,
+      themeMode: themeMode,
+      home: const LoginPage(),
     );
   }
 }

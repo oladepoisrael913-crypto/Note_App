@@ -1,5 +1,8 @@
 name: mini_app
-description: A new Flutter project.
+description: >-
+  A modern, portfolio-ready Flutter note-taking application featuring 
+  real-time synchronization with Firebase, intuitive note management, 
+  and a responsive Material Design UI with dark mode support.
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -29,6 +32,9 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+  
+  # Testing
+  mocktail: ^1.0.0
 
 flutter:
   uses-material-design: true
