@@ -36,8 +36,8 @@ class NoteCard extends StatelessWidget {
       secondaryBackground: Container(
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: Colors.blue.shade600,
-        child: const Icon(Icons.edit, color: Colors.white),
+        color: Theme.of(context).colorScheme.primary,
+        child: Icon(Icons.edit, color: Theme.of(context).colorScheme.onPrimary),
       ),
       confirmDismiss: (direction) async {
         if (direction == DismissDirection.endToStart) {
@@ -54,32 +54,33 @@ class NoteCard extends StatelessWidget {
         }
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
+        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
         child: Card(
-          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: ListTile(
-            contentPadding: const EdgeInsets.all(16),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             title: Text(
               data['title'] ?? 'No Title',
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              maxLines: 2,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+              padding: const EdgeInsets.only(top: 4.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     data['content'] ?? 'Empty note',
-                    maxLines: 2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Colors.grey.shade600),
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   Text(
                     'Created: $createdStr • Updated: $updatedStr',
-                    style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                    style: TextStyle(fontSize: 10, color: Colors.grey.shade500),
                   ),
                 ],
               ),

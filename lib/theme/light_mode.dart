@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+final lightColorScheme = ColorScheme.light(
+  surface: Colors.white,
+  primary: Colors.grey.shade600,
+  secondary: Colors.grey.shade400,
+  tertiary: Colors.amber.shade600,
+  inversePrimary: Colors.white,
+);
+
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
-  useMaterial3: true,
-  colorScheme: ColorScheme.light(
-    surface: Colors.white,
-    primary: Colors.blue.shade700,
-    secondary: Colors.blue.shade400,
-    tertiary: Colors.amber.shade600,
-    inversePrimary: Colors.blue.shade900,
-  ),
+  colorScheme: lightColorScheme,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
-    backgroundColor: Colors.blue.shade700,
-    foregroundColor: Colors.white,
+    backgroundColor: lightColorScheme.primary,
+    foregroundColor: lightColorScheme.inversePrimary,
     elevation: 0,
   ),
   cardColor: Colors.white,
@@ -21,4 +22,12 @@ ThemeData lightMode = ThemeData(
         bodyColor: Colors.grey.shade900,
         displayColor: Colors.grey.shade900,
       ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: lightColorScheme.primary,
+    foregroundColor: lightColorScheme.inversePrimary,
+  ),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: lightColorScheme.primary,
+    contentTextStyle: TextStyle(color: lightColorScheme.inversePrimary),
+  ),
 );

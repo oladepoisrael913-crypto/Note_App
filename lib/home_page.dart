@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mini_app/add/editNote.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mini_app/providers.dart';
+import 'package:mini_app/theme/light_mode.dart';
 import 'package:mini_app/widgets/search_and_sort_bar.dart';
 import 'package:mini_app/widgets/note_card.dart';
 import 'package:mini_app/widgets/empty_notes_view.dart';
@@ -24,7 +25,9 @@ class HomePage extends ConsumerWidget {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: const Text('Note deleted'),
+        backgroundColor: lightColorScheme.tertiary,
         duration: const Duration(seconds: 3),
+        
         action: SnackBarAction(
           label: 'Undo',
           onPressed: () {
@@ -64,7 +67,7 @@ class HomePage extends ConsumerWidget {
                 'updatedAt': FieldValue.serverTimestamp(),
               });
             } else {
-              // Update existing note
+              // Update Existing note
               FirebaseFirestore.instance
                   .collection('notes')
                   .doc(noteId)
@@ -93,7 +96,7 @@ class HomePage extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Logout', style: TextStyle(color: Colors.red)),
+            child: Text('Logout', style: TextStyle(color: Colors.red.shade600)),
           ),
         ],
       ),
@@ -119,9 +122,10 @@ class HomePage extends ConsumerWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            onPressed: () => _showLogoutDialog(context),
+            onPressed: () => _showLogoutDialog(context), 
             tooltip: 'Logout',
-          ),
+            
+          ),SizedBox(width: 10,)
         ],
       ),
       body: Column(
@@ -130,7 +134,7 @@ class HomePage extends ConsumerWidget {
           Expanded(
             child: notesAsync.when(
               data: (allNotes) {
-                // Filter notes based on search text
+                // Filter notes
                 final filteredNotes = searchText.isEmpty
                     ? allNotes
                     : allNotes.where((note) {
@@ -155,22 +159,28 @@ class HomePage extends ConsumerWidget {
                     await Future.delayed(const Duration(milliseconds: 500));
                   },
                   child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 8.0),
+                  
                     itemCount: filteredNotes.length,
                     itemBuilder: (context, index) {
                       final note = filteredNotes[index];
                       final data = note.data() as Map<String, dynamic>;
 
-                      return NoteCard(
-                        note: note,
-                        data: data,
-                        onDelete: () => deleteNote(context, note.id, data),
-                        onEdit: () => _navigateToEditNote(
-                          context,
-                          data['title'] ?? '',
-                          data['content'] ?? '',
-                          note.id,
+                      return Padding( 
+
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: NoteCard(
+                          note: note,
+                          data: data,
+                          onDelete: () => deleteNote(context, note.id, data),
+                          onEdit: () => _navigateToEditNote(
+                            context,
+                            data['title'] ?? '',
+                            data['content'] ?? '',
+                            note.id,
+                          ),
                         ),
                       );
                     },
@@ -186,7 +196,7 @@ class HomePage extends ConsumerWidget {
                   children: [
                     Icon(
                       Icons.error_outline,
-                      color: Colors.red.shade600,
+                      color: lightColorScheme.primary,
                       size: 48,
                     ),
                     const SizedBox(height: 16),

@@ -62,7 +62,8 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
             children: [
               TextFormField(
                 controller: titleController,
-                decoration: const InputDecoration(hintText: "Note Title"),
+                decoration: const InputDecoration(hintText: "Note Title", ),
+                
                 textInputAction: TextInputAction.next,
                 validator: (value) {
                   if ((value ?? '').trim().isEmpty &&
@@ -76,9 +77,10 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
               Expanded(
                 child: TextFormField(
                   controller: contentController,
-                  decoration: const InputDecoration(hintText: "Note Content"),
-                  maxLines: null,
+                  decoration: const InputDecoration(hintText: "Note Content", contentPadding: EdgeInsets.all(16)),
                   expands: true,
+                  maxLines: null,
+                  textAlignVertical: TextAlignVertical.top,
                   keyboardType: TextInputType.multiline,
                   validator: (value) {
                     if ((value ?? '').trim().isEmpty &&
@@ -92,7 +94,6 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
               const SizedBox(height: 16),
               SizedBox(
                 width: double.infinity,
-
                 child: ElevatedButton(
                   // clipBehavior: Clip.hardEdge,
                   onPressed: () {

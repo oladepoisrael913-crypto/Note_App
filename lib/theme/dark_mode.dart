@@ -21,4 +21,8 @@ ThemeData darkMode = ThemeData(
         bodyColor: Colors.white70,
         displayColor: Colors.white,
       ),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: Colors.grey.shade800,
+    contentTextStyle: const TextStyle(color: Colors.white),
+  ),
 );
