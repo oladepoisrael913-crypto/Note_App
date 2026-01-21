@@ -1,4 +1,4 @@
-# My Notes - Flutter Firebase App
+ My Notes - Flutter Firebase App
 
 A modern, production-ready note-taking application built with Flutter and Firebase, featuring real-time synchronization, responsive UI, and dark mode support.
 
@@ -8,30 +8,30 @@ A modern, production-ready note-taking application built with Flutter and Fireba
 ![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen)
 
-## 🌟 Features
+ Features
 
-- ✨ **Real-time Sync** - Notes sync instantly across devices using Firebase Firestore
-- 🔐 **Authentication** - Secure login and registration with Firebase Auth
-- 🔍 **Search & Filter** - Quickly find notes by title or content
-- 📊 **Sort Options** - Organize notes by creation or last updated date
-- 👆 **Swipe Actions** - Swipe to edit/delete with visual feedback
-- ↩️ **Undo Delete** - Restore deleted notes instantly
-- 🌙 **Dark Mode** - Seamless theme switching
-- 📱 **Responsive Design** - Optimized for all screen sizes
-- 🎨 **Material 3** - Modern Material Design 3 UI
-- ✅ **Well Tested** - Widget & unit tests with CI/CD pipeline
+- Real-time Sync - Notes sync instantly across devices using Firebase Firestore
+- Authentication - Secure login and registration with Firebase Auth
+- Search & Filter - Quickly find notes by title or content
+- Sort Options - Organize notes by creation or last updated date
+  wipe Actions- Swipe to edit/delete with visual feedback
+- Undo Delete - Restore deleted notes instantly
+- Dark Mode - Seamless theme switching
+- Responsive Design** - Optimized for all screen sizes
+- Material 3 - Modern Material Design 3 UI
+- Well Tested - Widget & unit tests with CI/CD pipeline
 
-## 🏗️ Architecture
+Architecture
 
 - **State Management:** Riverpod with auto-dispose providers
 - **Database:** Cloud Firestore with real-time streams
-- **Auth:** Firebase Authentication
-- **UI:** Material Design 3 with custom themes
-- **Testing:** Flutter widget tests + GitHub Actions CI/CD
+- Auth: Firebase Authentication
+- UI: Material Design 3 with custom themes
+- Testing:Flutter widget tests + GitHub Actions CI/CD
 
-## 🚀 Quick Start
+ Quick Start
 
-```bash
+bash
 # Install dependencies
 flutter pub get
 
@@ -44,11 +44,11 @@ flutter run
 # Run tests
 flutter test
 
-# Run with coverage
+ Run with coverage
 flutter test --coverage
-```
 
-## 📖 Documentation
+
+ Documentation
 
 - [ARCHITECTURE.md](docs/ARCHITECTURE.md) - Project structure and state management patterns
 - [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute and coding standards
@@ -56,9 +56,9 @@ flutter test --coverage
 - [IMPROVEMENTS.md](docs/IMPROVEMENTS.md) - Summary of all improvements
 - [CHANGELOG.md](CHANGELOG.md) - Release notes and version history
 
-## 🧪 Testing
+Testing
 
-```bash
+bash
 # Run all tests
 flutter test
 
@@ -67,11 +67,11 @@ flutter test test/widgets/note_card_test.dart
 
 # Generate coverage report
 flutter test --coverage
-```
 
-## 📁 Project Structure
 
-```
+ Project Structure
+
+
 lib/
 ├── main.dart                    # Entry point
 ├── providers.dart               # Riverpod state management
@@ -88,9 +88,9 @@ test/
 ├── widgets/
 │   ├── note_card_test.dart
 │   └── empty_notes_view_test.dart
-```
 
-## 🔒 Security
+
+Security
 
 - User-scoped Firestore security rules
 - Input validation on all database operations
@@ -99,7 +99,7 @@ test/
 
 See [firestore.rules](firestore.rules) for security configuration.
 
-## 📦 Tech Stack
+ Tech Stack
 
 - **Flutter** 3.0+
 - **Dart** 3.0+
@@ -110,15 +110,15 @@ See [firestore.rules](firestore.rules) for security configuration.
 ## 🔄 CI/CD Pipeline
 
 GitHub Actions automatically:
-- ✅ Analyzes code with `flutter analyze`
-- ✅ Checks formatting with `dart format`
-- ✅ Runs all tests
-- ✅ Builds release APK
-- ✅ Reports coverage metrics
+-  Analyzes code with `flutter analyze`
+-  Checks formatting with `dart format`
+-  Runs all tests
+-  Builds release APK
+-  Reports coverage metrics
 
 See [.github/workflows/flutter_ci.yml](.github/workflows/flutter_ci.yml)
 
-## 📊 Performance & Accessibility
+ Performance & Accessibility
 
 - 80%+ code coverage target
 - Optimized for accessibility (a11y)
@@ -127,7 +127,7 @@ See [.github/workflows/flutter_ci.yml](.github/workflows/flutter_ci.yml)
 
 See [ACCESSIBILITY_PERFORMANCE.md](docs/ACCESSIBILITY_PERFORMANCE.md) for detailed guidelines.
 
-## 🤝 Contributing
+ Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -137,11 +137,11 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 4. Add tests
 5. Submit a pull request
 
-## 📝 License
+ License
 
 MIT License - see LICENSE file for details
 
-## 🙋 Support
+ Support
 
 - 📧 [Report Issues](https://github.com/oladepoisrael913-crypto/Note_App/issues)
 - 💬 [Discussions](https://github.com/oladepoisrael913-crypto/Note_App/discussions)
