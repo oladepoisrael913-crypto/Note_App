@@ -1,12 +1,6 @@
- My Notes - Flutter Firebase App
+o My Notes - Flutter Firebase App
 
 A modern, production-ready note-taking application built with Flutter and Firebase, featuring real-time synchronization, responsive UI, and dark mode support.
-
-![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue)
-![Dart](https://img.shields.io/badge/Dart-3.0+-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)
-![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen)
 
  Features
 
@@ -23,8 +17,8 @@ A modern, production-ready note-taking application built with Flutter and Fireba
 
 Architecture
 
-- **State Management:** Riverpod with auto-dispose providers
-- **Database:** Cloud Firestore with real-time streams
+- State Management: Riverpod with auto-dispose providers
+- Database: Cloud Firestore with real-time streams
 - Auth: Firebase Authentication
 - UI: Material Design 3 with custom themes
 - Testing:Flutter widget tests + GitHub Actions CI/CD
@@ -45,7 +39,7 @@ flutter run
 flutter test
 
  Run with coverage
-flutter test --coverage
+flutter test coverage
 
 
  Documentation
@@ -101,13 +95,13 @@ See [firestore.rules](firestore.rules) for security configuration.
 
  Tech Stack
 
-- **Flutter** 3.0+
-- **Dart** 3.0+
-- **Firebase** (Auth + Firestore)
-- **Riverpod** - State management
-- **Material Design 3** - UI Framework
+- Flutter** 3.0+
+- Dart** 3.0+
+- Firebase** (Auth + Firestore)
+- Riverpod** - State management
+- Material Design 3 - UI Framework
 
-## 🔄 CI/CD Pipeline
+ 🔄 CI/CD Pipeline
 
 GitHub Actions automatically:
 -  Analyzes code with `flutter analyze`
@@ -147,6 +141,21 @@ MIT License - see LICENSE file for details
 - 💬 [Discussions](https://github.com/oladepoisrael913-crypto/Note_App/discussions)
 - 📚 See [docs/](docs/) for more information
 
----
 
-**Made with ❤️ using Flutter & Firebase**
+Note App Demo
+Description:
+This is a Flutter-based Note App integrated with Firebase for backend support. The app allows users to create, read, update, and delete notes, along with search and favorite features. The state management is handled using Riverpod, ensuring clean and maintainable code.
+Key Features Demonstrated in the Video:
+Adding and editing notes
+Deleting notes
+Searching notes by title or content
+Filtering favorites
+Smooth, intuitive UI/UX
+Tech Stack:
+Frontend: Flutter
+Backend: Firebase (Firestore & Auth)
+State Management: Riverpod
+Watch the Demo Video:
+https://drive.google.com/file/d/1LkqZYoZIRFX7rfRf-nJBkCovP73qafvJ/view?usp=drivesdk
+
+Built with using Flutter & Firebase
